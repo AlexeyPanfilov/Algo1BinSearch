@@ -11,8 +11,6 @@ public class Main {
         System.out.println(Boolean.TRUE.equals(1 == books(bookShelf, 70)));
         System.out.println(Boolean.TRUE.equals(0 == books(bookShelf, 72)));
         System.out.println(Boolean.TRUE.equals(0 == books(bookShelf, 73)));
-        int[] arr = {1, 1, 1, 1};
-        System.out.println(calc(arr));
     }
 
     static int books(int[] bookShelf, int newBook) {
@@ -42,13 +40,5 @@ public class Main {
             lastMatchIndex = left;
         }
         return bookShelf.length - 1 - lastMatchIndex;
-    }
-
-    static int calc (int[] arr) {
-        int ans = 0;
-        for (int i = 1; i < arr.length; i++) {
-            ans += arr[i] + arr[i - 1];
-        }
-        return ans;
     }
 }
