@@ -21,13 +21,7 @@ public class Main {
             int middle = (right + left) / 2;
             if (bookShelf[middle] == newBook) {
                 lastMatchIndex = middle;
-                left = middle;
-                if (left < (bookShelf.length - 1) && bookShelf[left] == bookShelf[left + 1]) {
-                    left++;
-                    lastMatchIndex++;
-                } else {
-                    break;
-                }
+                left = middle + 1;
             } else if (bookShelf[middle] < newBook) {
                 left = middle + 1;
             } else {
@@ -36,8 +30,6 @@ public class Main {
         }
         if (lastMatchIndex == -1) {
             lastMatchIndex = left - 1;
-        } else {
-            lastMatchIndex = left;
         }
         return bookShelf.length - 1 - lastMatchIndex;
     }
